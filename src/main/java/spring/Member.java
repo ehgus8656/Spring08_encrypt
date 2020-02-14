@@ -53,10 +53,10 @@ public class Member{
 	
 	//암호변경 기능을 구현하는 메서드
 	public void changePassword(String oldPassword, String newPassword){
-//		if(!password.equals(oldPassword))
-//			throw new IdPasswordMatchingException();
+		if(!password.equals(oldPassword))
+			throw new IdPasswordMatchingException();
 		PasswordEncoder encoder = new BCryptPasswordEncoder();
-		
+		System.out.println(newPassword);
 		if(!encoder.matches(oldPassword, password)) {
 			throw new IdPasswordMatchingException();
 		}
